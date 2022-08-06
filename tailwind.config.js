@@ -6,11 +6,14 @@ module.exports = {
   content: ["./**/*.{html,js}", ],
   theme: {
     extend: {
+      colors: {
+        cyan: colors.cyan,
+      },
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
     },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/forms'),],
   
 }
