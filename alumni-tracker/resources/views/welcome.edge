@@ -1,35 +1,42 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html >
+<html lang="en" class="h-full bg-gray-100">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AdonisJS - A fully featured web framework for Node.js</title>
-  @entryPointStyles('app')
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <script defer src="https://unpkg.com/alpinejs@3.10.3/dist/cdn.min.js"></script>
+    @entryPointStyles('app')
   @entryPointScripts('app')
 </head>
-<body>
+<body class="antialiased font-sans bg-gray-200 overflow-hidden">
+  <div class="" style="">
+  <div class="h-full bg-gray-100 overflow-y-auto">
+    
+  <!--
+  This example requires updating your template:
 
-  <main>
-    <div>
-      <h1 class="title"> It Works! </h1>
-      <p class="subtitle">
-        Congratulations, you have just created your first AdonisJS app.
-      </p>
+  ```
+  <html class="h-full bg-gray-100">
+  <body class="h-full">
+  ```
+  -->
+  <div x-data="{ open: true }" class="min-h-full">
+    
+    @include ('components/sidebar.edge')
 
-      <ul>
-        <li>
-          The route for this page is defined inside <code>start/routes.ts</code> file
-        </li>
-
-        <li>
-          You can update this page by editing <code>resources/views/welcome.edge</code> file
-        </li>
-
-        <li>
-          If you run into problems, you can reach us on <a href="https://discord.gg/vDcEjq6?">Discord</a> or the <a href="https://forum.adonisjs.com/">Forum</a>.
-        </li>
-      </ul>
+    <div class="lg:pl-64 flex flex-col flex-1">
+      @include('components/searchbar.edge')
+      <main class="flex-1 pb-8">
+        <!-- Page header -->
+        @include ('components/homeuserHeader.edge')
+        @include('components/homeuserContent.edge')
+      </main>
     </div>
-  </main>
+  </div>
+
+  </div>
+</div>
 </body>
 </html>
